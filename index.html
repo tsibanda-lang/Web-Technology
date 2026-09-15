@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Thando Sibanda personal profile and mini-portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thando Sibanda | Profile & Mini-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <h1>Thando Sibanda</h1>
-        <p>Software Engineering student, writer and musician.</p>
+        <div class="profile">
+            <img src="profile-picture.jpg" alt="Profile picture of Thando Sibanda">
+
+            <div>
+                <h1>Thando Sibanda</h1>
+                <p>Software Engineering student, writer and musician.</p>
+            </div>
+        </div>
+
         <nav aria-label="Main navigation">
             <a href="#about">About</a>
-            <a href="#skills">Skills & Interests</a>
+            <a href="#skills">Skills &amp; Interests</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact Me</a>
         </nav>
@@ -28,52 +38,87 @@
         </section>
 
         <section id="skills">
-            <h2>Skills & Interests</h2>
-            <article>
-                <h3>Technology</h3>
-                <p>I am interested in software development, databases and web technologies.</p>
-            </article>
-            <article>
-                <h3>Creative Work</h3>
-                <p>I enjoy writing, singing and playing the ukulele.</p>
-            </article>
+            <h2>Skills &amp; Interests</h2>
+
+            <div class="cards">
+                <article>
+                    <h3>Technology</h3>
+                    <p>
+                        I am interested in software development, databases and web technologies.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Creative Work</h3>
+                    <p>
+                        I enjoy writing, singing and playing the ukulele.
+                    </p>
+                </article>
+            </div>
         </section>
 
         <section id="portfolio">
             <h2>Portfolio</h2>
-            <article>
-                <h3>University Writing</h3>
-                <p>I enjoy writing articles for university publications and telling student stories.</p>
-            </article>
-            <article>
-                <h3>Software Engineering Projects</h3>
-                <p>My coursework has introduced me to programming, databases and web technologies.</p>
-            </article>
+
+            <div class="cards">
+                <article>
+                    <h3>University Writing</h3>
+                    <p>
+                        I enjoy writing articles for university publications and telling student stories.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Software Engineering Projects</h3>
+                    <p>
+                        My coursework has introduced me to programming, databases and web technologies.
+                    </p>
+                </article>
+            </div>
         </section>
 
         <section id="contact">
             <h2>Contact Me</h2>
+
             <form action="#" method="post">
                 <p>
                     <label for="name">Full name:</label><br>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" minlength="2" required>
                 </p>
+
                 <p>
                     <label for="email">Email address:</label><br>
                     <input type="email" id="email" name="email" required>
                 </p>
+
                 <p>
                     <label for="phone">Phone number:</label><br>
-                    <input type="tel" id="phone" name="phone" required>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        pattern="[0-9+\-\s()]{7,20}"
+                        title="Please enter a valid phone number."
+                        required
+                    >
                 </p>
+
                 <p>
                     <label for="subject">Subject:</label><br>
-                    <input type="text" id="subject" name="subject" required>
+                    <input type="text" id="subject" name="subject" minlength="3" required>
                 </p>
+
                 <p>
                     <label for="message">Message:</label><br>
-                    <textarea id="message" name="message" rows="6" required></textarea>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        minlength="10"
+                        required
+                    ></textarea>
                 </p>
+
                 <button type="submit">Send Message</button>
             </form>
         </section>
