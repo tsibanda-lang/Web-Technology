@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="description" content="Thando Sibanda personal profile and mini-portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thando Sibanda | Profile & Mini-Portfolio</title>
+    <title>Thando Sibanda | Profile &amp; Mini-Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-    <header>
+    <header class="site-header">
         <div class="profile">
             <img src="profile-picture.jpg" alt="Profile picture of Thando Sibanda">
 
@@ -19,7 +20,7 @@
             </div>
         </div>
 
-        <nav aria-label="Main navigation">
+        <nav aria-label="Main navigation" class="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
             <a href="#about">About</a>
             <a href="#skills">Skills &amp; Interests</a>
             <a href="#portfolio">Portfolio</a>
@@ -77,10 +78,10 @@
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="contact-section">
             <h2>Contact Me</h2>
 
-            <form action="#" method="post">
+            <form action="#" method="post" class="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <p>
                     <label for="name">Full name:</label><br>
                     <input type="text" id="name" name="name" minlength="2" required>
@@ -102,35 +103,35 @@
                         required
                     >
                 </p>
-                <p>
-    <span>Preferred contact method:</span><br>
 
-    <input
-        type="radio"
-        id="contact-email"
-        name="contact-method"
-        value="email"
-        required
-    >
-    <label for="contact-email">Email</label>
+                <fieldset class="contact-method">
+                    <legend>Preferred contact method:</legend>
+                    <div class="radio-options">
+                        <input
+                            type="radio"
+                            id="contact-email"
+                            name="contact-method"
+                            value="email"
+                            required
+                        >
+                        <label for="contact-email">Email</label>
 
-    <input
-        type="radio"
-        id="contact-phone"
-        name="contact-method"
-        value="phone"
-    >
-    <label for="contact-phone">Phone</label>
-</p>
-                
-                    
+                        <input
+                            type="radio"
+                            id="contact-phone"
+                            name="contact-method"
+                            value="phone"
+                        >
+                        <label for="contact-phone">Phone</label>
+                    </div>
+                </fieldset>
 
                 <p>
                     <label for="subject">Subject:</label><br>
                     <input type="text" id="subject" name="subject" minlength="3" required>
                 </p>
 
-                <p>
+                <p class="message-field">
                     <label for="message">Message:</label><br>
                     <textarea
                         id="message"
@@ -141,7 +142,9 @@
                     ></textarea>
                 </p>
 
-                <button type="submit">Send Message</button>
+                <div class="submit-field">
+                    <button type="submit">Send Message</button>
+                </div>
             </form>
         </section>
     </main>
